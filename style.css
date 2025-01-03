@@ -1,0 +1,152 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    color: #000;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.counter-app {
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+    padding: 20px;
+    border: 1px solid #000;
+    border-radius: 10px;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.counter-display {
+    font-size: 48px;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+.controls, .advanced-controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    border: 1px solid #000;
+    background-color: #fff;
+    color: #000;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+button:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+input[type="number"] {
+    width: 80px;
+    padding: 5px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    font-size: 14px;
+    text-align: center;
+}
+
+label {
+    font-size: 14px;
+    margin-right: 5px;
+    font-weight: bold;
+}
+
+.advanced-controls div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5px 0;
+}
+
+/* Media Query for Tablets (max-width: 768px) */
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+
+    .counter-display {
+        font-size: 2.5rem;
+    }
+
+    .controls button {
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+    }
+
+    .advanced-controls {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .advanced-controls div {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .advanced-controls label,
+    .advanced-controls input {
+        font-size: 0.9rem;
+    }
+}
+
+/* Media Query for Phones (max-width: 480px) */
+@media (max-width: 480px) {
+    .container {
+        padding: 0.5rem;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .counter-display {
+        font-size: 2rem;
+    }
+
+    .controls button {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
+        margin: 0.2rem;
+    }
+
+    .advanced-controls {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .advanced-controls label,
+    .advanced-controls input {
+        font-size: 0.8rem;
+    }
+
+    .advanced-controls input {
+        padding: 0.3rem;
+    }
+}
