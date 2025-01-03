@@ -9,11 +9,13 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    overflow-y: scroll;
 }
 
 .counter-app {
     text-align: center;
     max-width: 1100px;
+    width: 60vw;
     padding: 20px;
     border: 1px solid #000;
     border-radius: 10px;
@@ -32,11 +34,18 @@ h1 {
     margin: 20px 0;
 }
 
-.controls, .advanced-controls {
+.controls, .controls-container {
     display: flex;
     justify-content: center;
-    gap: 10px;
+    gap: 20px;
     margin-bottom: 20px;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
 }
 
 button {
@@ -48,19 +57,26 @@ button {
     border-radius: 5px;
     font-size: 16px;
     transition: background-color 0.3s, color 0.3s;
+    &:hover {
+        background-color: #000;
+        color: #fff;
+    }
+    &:active {
+        transform: scale(0.95);
+    }
 }
 
-button:hover {
+button#set-start {
+    padding: 10px 32%;
     background-color: #000;
     color: #fff;
-}
-
-button:active {
-    transform: scale(0.95);
+    &:hover {
+        background-color: #000000cc;
+    }
 }
 
 input[type="number"] {
-    width: 80px;
+    max-width: 120px;
     padding: 5px;
     border: 1px solid #000;
     border-radius: 5px;
@@ -74,15 +90,8 @@ label {
     font-weight: bold;
 }
 
-.advanced-controls div {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 5px 0;
-}
-
 /* Media Query for Tablets (max-width: 768px) */
-@media (max-width: 768px) {
+@media (max-width: 992px) {
     .container {
         padding: 1rem;
     }
@@ -93,23 +102,22 @@ label {
 
     .controls button {
         font-size: 1rem;
-        padding: 0.5rem 1rem;
+        width: 78%;
     }
 
-    .advanced-controls {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-
-    .advanced-controls div {
-        display: flex;
+    .controls, .controls-container {
         flex-direction: column;
+        align-items: center;
     }
 
-    .advanced-controls label,
-    .advanced-controls input {
+    button {
+        padding: 10px 15px;
+    }
+
+    .input-container label,
+    .input-container input {
         font-size: 0.9rem;
+        width: 300px;
     }
 }
 
@@ -132,12 +140,6 @@ label {
         font-size: 0.9rem;
         padding: 0.4rem 0.8rem;
         margin: 0.2rem;
-    }
-
-    .advanced-controls {
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
     }
 
     .advanced-controls label,
